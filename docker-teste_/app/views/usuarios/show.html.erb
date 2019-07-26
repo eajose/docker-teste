@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rails:</strong>
+  <%= @usuario.rails %>
+</p>
+
+<p>
+  <strong>Generate:</strong>
+  <%= @usuario.generate %>
+</p>
+
+<p>
+  <strong>Scaffold:</strong>
+  <%= @usuario.scaffold %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @usuario.User %>
+</p>
+
+<p>
+  <strong>Nome completo:</strong>
+  <%= @usuario.Nome_Completo %>
+</p>
+
+<p>
+  <strong>Idade:</strong>
+  <%= @usuario.Idade %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @usuario.CPF %>
+</p>
+
+<p>
+  <strong>Data de nascimento:</strong>
+  <%= @usuario.Data_de_Nascimento %>
+</p>
+
+<%= link_to 'Edit', edit_usuario_path(@usuario) %> |
+<%= link_to 'Back', usuarios_path %>

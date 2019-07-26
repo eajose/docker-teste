@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rails: MyString
+  generate: MyString
+  scaffold: MyString
+  User: MyString
+  Nome_Completo: MyString
+  Idade: 1
+  CPF: MyString
+  Data_de_Nascimento: 2019-07-26
+
+two:
+  rails: MyString
+  generate: MyString
+  scaffold: MyString
+  User: MyString
+  Nome_Completo: MyString
+  Idade: 1
+  CPF: MyString
+  Data_de_Nascimento: 2019-07-26

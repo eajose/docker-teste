@@ -1,0 +1,102 @@
+Fonte: https://docs.docker.com/compose/rails/#connect-the-database
+
+Criando uma aplicação rails com Docker:
+
+1° Criar arquivo Dockerfile com o seguinte conteúdo:
+
+FROM ruby:2.5
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+RUN mkdir /myapp
+WORKDIR /myapp
+COPY Gemfile /myapp/Gemfile
+COPY Gemfile.lock /myapp/Gemfile.lock
+RUN bundle install
+COPY . /myapp
+
+2° Criar o arquivo Gemfile com o conteúdo:
+
+source 'https://rubygems.org'
+gem 'rails', '5.2.0'
+
+3° Dentro do diretório crie o Gemfile.lock para construir o Dockerfile com o seguinte comando no terminal:
+
+touch Gemfile.lock
+
+4° Criar o docker-compose.yml contendo:
+
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+5° Depois de criado os arquivos, construa sua aplicação com o Docker com o seguinte comando:
+
+docker-compose run web rails new . --force --database=postgresql
+docker-compose run web rails new . --force --no-deps --database=postgresql
+
+6° Usando o Linux o projeto construido via Docker fica atrelado ao usuário raiz, para mudar o usuário execute o seguinte comando no terminal:
+
+sudo chown -R $USER:$USER .
+
+7° Construa a aplicação:
+
+docker-compose build
+
+8° Aponte o banco de dados ao Docker no arquivo localizado em "config/database.yml" com o seguinte conteúdo:
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password:
+  pool: 5
+
+development:
+  <<: *default
+  database: myapp_development
+
+
+test:
+  <<: *default
+  database: myapp_test
+
+9° Subir a aplicação:
+
+docker-compose up
+
+10° Abra outro terminal e crie um banco de dados vazios:
+
+docker-compose run web rake db:create
+
+Instalar o postgresql, abra outro terminal:
+
+docker-compose run web bash
+apt-get install postgresql postgresql-contrib
+
+PATH=$PATH:/usr/lib/pgsql/bin
+
+11° Parar a aplicação:
+
+docker-compose down
+
+ou
+
+Ctrl + C
+
+Usando o Ctrl + C pode gerar o erro de ter um pid temporário, então delete o pid em /myapp/tmp/pids/server.pid.
+
+12° Para restartar a aplicação rode:
+
+docker-compose up
