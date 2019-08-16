@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data admissao:</strong>
+  <%= @contratacao.Data_admissao %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @contratacao.date %>
+</p>
+
+<p>
+  <strong>Data demissao:</strong>
+  <%= @contratacao.Data_demissao %>
+</p>
+
+<p>
+  <strong>Registro funcionario:</strong>
+  <%= @contratacao.Registro_funcionario %>
+</p>
+
+<%= link_to 'Edit', edit_contratacao_path(@contratacao) %> |
+<%= link_to 'Back', contratacaos_path %>

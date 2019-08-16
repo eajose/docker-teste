@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Agenda: 2019-08-16
+  Status: MyString
+  Lista_candidatos: MyString
+  Nome_processo: MyString
+
+two:
+  Agenda: 2019-08-16
+  Status: MyString
+  Lista_candidatos: MyString
+  Nome_processo: MyString

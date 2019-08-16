@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Login:</strong>
+  <%= @candidato.Login %>
+</p>
+
+<p>
+  <strong>Senha:</strong>
+  <%= @candidato.Senha %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @candidato.CPF %>
+</p>
+
+<%= link_to 'Edit', edit_candidato_path(@candidato) %> |
+<%= link_to 'Back', candidatos_path %>

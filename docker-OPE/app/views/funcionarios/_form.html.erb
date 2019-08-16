@@ -1,0 +1,32 @@
+<%= form_with(model: funcionario, local: true) do |form| %>
+  <% if funcionario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(funcionario.errors.count, "error") %> prohibited this funcionario from being saved:</h2>
+
+      <ul>
+      <% funcionario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Codigo %>
+    <%= form.number_field :Codigo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Nome %>
+    <%= form.text_field :Nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Departamento %>
+    <%= form.text_field :Departamento %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

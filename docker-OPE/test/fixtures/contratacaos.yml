@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Data_admissao: MyString
+  date: MyString
+  Data_demissao: 2019-08-16
+  Registro_funcionario: 1
+
+two:
+  Data_admissao: MyString
+  date: MyString
+  Data_demissao: 2019-08-16
+  Registro_funcionario: 1

@@ -1,0 +1,37 @@
+<%= form_with(model: processo_seletivo, local: true) do |form| %>
+  <% if processo_seletivo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(processo_seletivo.errors.count, "error") %> prohibited this processo_seletivo from being saved:</h2>
+
+      <ul>
+      <% processo_seletivo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Agenda %>
+    <%= form.date_select :Agenda %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Status %>
+    <%= form.text_field :Status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Lista_candidatos %>
+    <%= form.text_field :Lista_candidatos %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Nome_processo %>
+    <%= form.text_field :Nome_processo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

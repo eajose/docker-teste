@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contratacaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data admissao</th>
+      <th>Date</th>
+      <th>Data demissao</th>
+      <th>Registro funcionario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contratacaos.each do |contratacao| %>
+      <tr>
+        <td><%= contratacao.Data_admissao %></td>
+        <td><%= contratacao.date %></td>
+        <td><%= contratacao.Data_demissao %></td>
+        <td><%= contratacao.Registro_funcionario %></td>
+        <td><%= link_to 'Show', contratacao %></td>
+        <td><%= link_to 'Edit', edit_contratacao_path(contratacao) %></td>
+        <td><%= link_to 'Destroy', contratacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contratacao', new_contratacao_path %>

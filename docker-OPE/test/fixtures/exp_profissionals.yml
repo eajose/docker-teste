@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Nome_Empresa: MyString
+  Cargo: MyString
+  Data_admissao: 2019-08-16
+  Data_saida: 2019-08-16
+
+two:
+  Nome_Empresa: MyString
+  Cargo: MyString
+  Data_admissao: 2019-08-16
+  Data_saida: 2019-08-16

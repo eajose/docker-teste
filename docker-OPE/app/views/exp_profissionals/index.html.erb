@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Exp Profissionals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome empresa</th>
+      <th>Cargo</th>
+      <th>Data admissao</th>
+      <th>Data saida</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exp_profissionals.each do |exp_profissional| %>
+      <tr>
+        <td><%= exp_profissional.Nome_Empresa %></td>
+        <td><%= exp_profissional.Cargo %></td>
+        <td><%= exp_profissional.Data_admissao %></td>
+        <td><%= exp_profissional.Data_saida %></td>
+        <td><%= link_to 'Show', exp_profissional %></td>
+        <td><%= link_to 'Edit', edit_exp_profissional_path(exp_profissional) %></td>
+        <td><%= link_to 'Destroy', exp_profissional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Exp Profissional', new_exp_profissional_path %>

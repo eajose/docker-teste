@@ -1,0 +1,37 @@
+<%= form_with(model: formacao, local: true) do |form| %>
+  <% if formacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(formacao.errors.count, "error") %> prohibited this formacao from being saved:</h2>
+
+      <ul>
+      <% formacao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Nome_curso %>
+    <%= form.text_field :Nome_curso %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Nome_instituicao %>
+    <%= form.text_field :Nome_instituicao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Data_inicio %>
+    <%= form.date_select :Data_inicio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Data_formacao %>
+    <%= form.date_select :Data_formacao %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

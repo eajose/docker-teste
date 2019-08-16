@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome curso:</strong>
+  <%= @formacao.Nome_curso %>
+</p>
+
+<p>
+  <strong>Nome instituicao:</strong>
+  <%= @formacao.Nome_instituicao %>
+</p>
+
+<p>
+  <strong>Data inicio:</strong>
+  <%= @formacao.Data_inicio %>
+</p>
+
+<p>
+  <strong>Data formacao:</strong>
+  <%= @formacao.Data_formacao %>
+</p>
+
+<%= link_to 'Edit', edit_formacao_path(@formacao) %> |
+<%= link_to 'Back', formacaos_path %>

@@ -1,0 +1,2 @@
+class ExpProfissional < ApplicationRecord
+end

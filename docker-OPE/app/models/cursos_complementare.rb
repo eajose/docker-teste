@@ -1,0 +1,2 @@
+class CursosComplementare < ApplicationRecord
+end

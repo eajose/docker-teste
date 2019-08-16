@@ -1,0 +1,37 @@
+<%= form_with(model: exp_profissional, local: true) do |form| %>
+  <% if exp_profissional.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(exp_profissional.errors.count, "error") %> prohibited this exp_profissional from being saved:</h2>
+
+      <ul>
+      <% exp_profissional.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Nome_Empresa %>
+    <%= form.text_field :Nome_Empresa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Cargo %>
+    <%= form.text_field :Cargo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Data_admissao %>
+    <%= form.date_select :Data_admissao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Data_saida %>
+    <%= form.date_select :Data_saida %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

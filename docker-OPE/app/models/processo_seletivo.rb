@@ -1,0 +1,2 @@
+class ProcessoSeletivo < ApplicationRecord
+end

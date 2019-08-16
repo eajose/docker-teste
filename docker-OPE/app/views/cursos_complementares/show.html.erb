@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome curso:</strong>
+  <%= @cursos_complementare.Nome_curso %>
+</p>
+
+<p>
+  <strong>Nome instituicao:</strong>
+  <%= @cursos_complementare.Nome_instituicao %>
+</p>
+
+<p>
+  <strong>Data inicio:</strong>
+  <%= @cursos_complementare.Data_inicio %>
+</p>
+
+<p>
+  <strong>Data formacao:</strong>
+  <%= @cursos_complementare.Data_formacao %>
+</p>
+
+<%= link_to 'Edit', edit_cursos_complementare_path(@cursos_complementare) %> |
+<%= link_to 'Back', cursos_complementares_path %>

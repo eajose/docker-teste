@@ -1,0 +1,87 @@
+<%= form_with(model: curriculo, local: true) do |form| %>
+  <% if curriculo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(curriculo.errors.count, "error") %> prohibited this curriculo from being saved:</h2>
+
+      <ul>
+      <% curriculo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Nome_Completo %>
+    <%= form.text_field :Nome_Completo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Data_Nascimento %>
+    <%= form.date_select :Data_Nascimento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :RG %>
+    <%= form.text_field :RG %>
+  </div>
+
+  <div class="field">
+    <%= form.label :CPF %>
+    <%= form.text_field :CPF %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Email %>
+    <%= form.text_field :Email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Telefone %>
+    <%= form.text_field :Telefone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Logradouro %>
+    <%= form.text_field :Logradouro %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Cidade %>
+    <%= form.text_field :Cidade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Estado %>
+    <%= form.text_field :Estado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :UF %>
+    <%= form.text_field :UF %>
+  </div>
+
+  <div class="field">
+    <%= form.label :CEP %>
+    <%= form.text_field :CEP %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Formacao %>
+    <%= form.text_field :Formacao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Curso_Complementar %>
+    <%= form.text_field :Curso_Complementar %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ExpProfissional %>
+    <%= form.text_field :ExpProfissional %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

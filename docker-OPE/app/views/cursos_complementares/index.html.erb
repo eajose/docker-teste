@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cursos Complementares</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome curso</th>
+      <th>Nome instituicao</th>
+      <th>Data inicio</th>
+      <th>Data formacao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cursos_complementares.each do |cursos_complementare| %>
+      <tr>
+        <td><%= cursos_complementare.Nome_curso %></td>
+        <td><%= cursos_complementare.Nome_instituicao %></td>
+        <td><%= cursos_complementare.Data_inicio %></td>
+        <td><%= cursos_complementare.Data_formacao %></td>
+        <td><%= link_to 'Show', cursos_complementare %></td>
+        <td><%= link_to 'Edit', edit_cursos_complementare_path(cursos_complementare) %></td>
+        <td><%= link_to 'Destroy', cursos_complementare, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cursos Complementare', new_cursos_complementare_path %>

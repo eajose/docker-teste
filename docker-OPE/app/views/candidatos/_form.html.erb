@@ -1,0 +1,32 @@
+<%= form_with(model: candidato, local: true) do |form| %>
+  <% if candidato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(candidato.errors.count, "error") %> prohibited this candidato from being saved:</h2>
+
+      <ul>
+      <% candidato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Login %>
+    <%= form.text_field :Login %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Senha %>
+    <%= form.text_field :Senha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :CPF %>
+    <%= form.text_field :CPF %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
